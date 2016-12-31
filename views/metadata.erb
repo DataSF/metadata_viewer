@@ -1,0 +1,32 @@
+
+<H1> Metadata for  <%= @dataset_name %>  </H1>
+<div>
+  <h2> Overview </h2>
+  <ul>
+    <li>Department: <%= @department %></li>
+    <li>Inventory ID: <%= @inventoryid %></li>
+  </ul>
+</div>
+<div>
+    <table>
+    <tr>
+      <th> Field Name </th>
+      <th> Field Type </th>
+      <th> Field Definition </th>
+    </tr>
+    <% @dataset_info.each do |field| %>
+    <tr>
+      <td>
+        <%= field['field_name'] %>
+      </td>
+      <td>
+        <%= field['field_type'] %>
+      </td>
+      <td>
+        <%= field['field_definition'] %>
+      </td>
+    <% end %>
+    </tr>
+    </table>
+
+<h3>Link to  Dataset:  <%=@dataset_url %></h3>
